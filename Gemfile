@@ -18,7 +18,9 @@ end
 
 group :test do
   gem 'minitest-reporters', '1.0.5'
+  #"mini_backtrace gem provides cleaner logs for test errors"
   gem 'mini_backtrace',     '0.1.3'
+  #"guard automates tests"
   gem 'guard-minitest',     '2.3.1'
 end
 
