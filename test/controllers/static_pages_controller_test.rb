@@ -19,6 +19,12 @@ class StaticPagesControllerTest < ActionController::TestCase
   	assert_select "title", "The Reference and Learning App"
   end
 
+  test "should get contact" do
+    get :contact
+    assert_response :success
+    assert_select "title", "The Reference and Learning App"
+  end
+
 end
 
 #"assert_response :success" the get request gets a 200:OK
