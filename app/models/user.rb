@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 	before_save { self.email = email.downcase }
 	validates :name, presence: true, length: {maximum: 50}
-	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
 	validates :email, presence: true, length: {maximum: 255},
 											format: { with: VALID_EMAIL_REGEX },
 											uniqueness: { case_sensitive: false } 
@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   # a hashed password
   #that Rails uses to match corresponding hashes.
   #For this to work, 2 more steps
-  #1. the model needs a "password_digest"
+  #1. the database needs a "password_digest"
   #  attribute:
   #  => $rails g migration add_password_digest_to_users password_digest:string 
   #2. Install "bcrypt gem" 

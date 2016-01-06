@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   
-
-  get 'users/new'
+resources :users
 
 #"static_pages home and help routes" were create with the 
 #rails generate controller StaticPages home help"
@@ -15,5 +14,7 @@ Rails.application.routes.draw do
   get 'about'   => 'static_pages#about'
   get 'contact' => 'static_pages#contact'
   get 'signup'  => 'users#new'
+
+
 
 end
